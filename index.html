@@ -38,7 +38,6 @@
         header {
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(135dog, var(--nc-blue), #020617);
             background: linear-gradient(135deg, var(--nc-blue), #020617);
             border-bottom: 4px solid var(--nc-gold);
             border-radius: 12px 12px 0 0;
@@ -86,6 +85,69 @@
             border-left: 4px solid var(--nc-gold);
             padding-left: 12px;
             color: var(--text-main);
+        }
+
+        .season-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            background: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 16px 12px;
+            text-align: center;
+        }
+
+        .stat .value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--nc-gold);
+        }
+
+        .stat .value.bad {
+            color: var(--nc-red);
+        }
+
+        .stat .label {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-sub);
+            margin-top: 4px;
+        }
+
+        .timeline {
+            list-style: none;
+            border-left: 2px solid #334155;
+            margin-left: 8px;
+            padding-left: 20px;
+        }
+
+        .timeline li {
+            position: relative;
+            margin-bottom: 16px;
+            color: var(--text-sub);
+            font-size: 0.93rem;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 7px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--nc-red);
+        }
+
+        .timeline li strong {
+            color: var(--text-main);
+            margin-right: 6px;
         }
 
         .metrics-grid {
@@ -174,13 +236,31 @@
     <div class="container">
         <header>
             <h1>NC 다이노스 이호준 감독 <span>경질 촉구</span> 리포트</h1>
-            <div class="status-badge">기준: 2026년 10월 1일 | 포스트시즌 진출 최종 무산 및 7위 추락 확정</div>
+            <div class="status-badge">기준: 2026년 10월 12일 정규시즌 종료 | 최종 8위 (64승 2무 78패) · 가을야구 탈락</div>
         </header>
 
         <div class="manifesto">
             <h2>성명서: 충분히 가고도 남을 전력, 감독의 무능이 가을야구를 날렸다</h2>
-            <p>전력 구성상 우리 팀은 명실상부 가을야구에 안착하고도 남을 강력한 스쿼드를 갖추고 있었습니다. 그러나 잇따른 승부처 패배 끝에 전날 포스트시즌 탈락이 확정되었고, 오늘(1차일) 끝내 7위로 추락했습니다. 이는 선수의 책임이 아닌, <span class="highlight-text">우수한 전력을 쥐고도 데이터와 역행하는 최악의 경기 운영을 보여준 이호준 감독의 명백한 전술적 무능</span>이 빚어낸 참담한 인재(人災)입니다.</p>
+            <p>전력 구성상 우리 팀은 명실상부 가을야구에 안착하고도 남을 강력한 스쿼드를 갖추고 있었습니다. 그러나 9월 30일 잠실 두산전에서 9회초까지 5-3으로 앞서던 경기를 9회말 3실점으로 내주며 포스트시즌 탈락이 확정되었고, 결국 64승 2무 78패, 승률 0.451, <span class="highlight-text">10개 구단 중 8위</span>로 시즌을 마감했습니다. 5위 두산과의 격차는 무려 10.5경기입니다. 이는 선수의 책임이 아닌, <span class="highlight-text">우수한 전력을 쥐고도 데이터와 역행하는 최악의 경기 운영을 보여준 이호준 감독의 명백한 전술적 무능</span>이 빚어낸 참담한 인재(人災)입니다.</p>
         </div>
+
+        <div class="season-stats">
+            <div class="stat"><span class="value bad">8위</span><span class="label">정규시즌 최종 순위</span></div>
+            <div class="stat"><span class="value">64-2-78</span><span class="label">승-무-패 (승률 0.451)</span></div>
+            <div class="stat"><span class="value bad">10.5</span><span class="label">5위 두산과의 게임 차</span></div>
+            <div class="stat"><span class="value bad">30개</span><span class="label">블론세이브 (리그 최다)</span></div>
+            <div class="stat"><span class="value bad">33번</span><span class="label">역전패 (리그 4번째로 많음)</span></div>
+            <div class="stat"><span class="value bad">5.22</span><span class="label">불펜 평균자책점 (8위)</span></div>
+        </div>
+
+        <h2 class="section-title">📅 무너져 내린 시즌 막판</h2>
+        <ul class="timeline">
+            <li><strong>9월 8일</strong>롯데전 3-6 패배에도 55승 2무 60패, 6위. 5위 두산과는 4.5경기 차로 가을야구 희망이 살아 있었습니다.</li>
+            <li><strong>9월 중순 이후</strong>연패가 이어지며 5위와의 격차가 걷잡을 수 없이 벌어졌습니다.</li>
+            <li><strong>9월 30일</strong>잠실 두산전. 9회초까지 5-3으로 앞섰지만 9회말 3실점하며 5-6 역전패. 5위와 8경기 차가 되면서 포스트시즌 탈락이 확정됐습니다.</li>
+            <li><strong>10월 10일</strong>대전 한화전 최종전. 9-3으로 앞서던 경기에서 9회에만 5점을 내주며 9-8로 진땀승. 마지막 경기까지 불펜 불안은 해결되지 않았습니다.</li>
+            <li><strong>10월 12일</strong>정규시즌 종료. NC는 최종 8위로 마감했습니다.</li>
+        </ul>
 
         <h2 class="section-title">📊 지표로 증명된 '가용 전력 낭비와 무능'</h2>
         
@@ -192,12 +272,12 @@
 
             <div class="card">
                 <h3>클러치 상황 WPA(승리확률기여도) <span class="badge">역주행 용병술</span></h3>
-                <p>박건우 등 핵심 타자들이 고군분투했음에도 중요한 승부처마다 흐름을 끊어먹는 최악의 대타 선택과 엇박자 투수 교체로 <span class="highlight-text">WPA를 지속적으로 까먹으며</span> 스스로 승리를 내다 버렸습니다.</p>
+                <p>박건우 등 핵심 타자들이 고군분투했음에도 중요한 승부처마다 흐름을 끊어먹는 최악의 대타 선택과 엇박자 투수 교체로 <span class="highlight-text">WPA를 지속적으로 까먹으며</span> 스스로 승리를 내다 버렸습니다. 올 시즌 역전패만 33번, 리그에서 4번째로 많습니다.</p>
             </div>
 
             <div class="card">
                 <h3>불펜 과부하 및 관리 실패 <span class="badge">마운드 자멸</span></h3>
-                <p>투수진 지표의 효율적 분배를 전혀 해내지 못하고 특정 투수들에게 과부하를 주거나 타이밍 늦은 교체를 반복하여, 팀 700실점이 넘는 난조 속에서 가을야구 티켓을 스스로 차버렸습니다.</p>
+                <p>투수진 지표의 효율적 분배를 전혀 해내지 못하고 특정 투수들에게 과부하를 주거나 타이밍 늦은 교체를 반복하여, <span class="highlight-text">블론세이브 30개로 10개 구단 중 최다</span>라는 불명예를 안았습니다. 감독 스스로도 "7~9회에 뒤집힌 경기가 많았다"고 인정했을 만큼, 경기 후반 불펜 운영 실패가 가을야구 티켓을 스스로 차버린 결정적 원인입니다.</p>
             </div>
 
             <div class="card">
@@ -206,8 +286,8 @@
             </div>
 
             <div class="card">
-                <h3>투수진 FIP & ERA 괴리 <span class="badge">코칭스태프 역량 한계</span></h3>
-                <p>투수진의 세부 지표와 실점 간의 간극을 좁히지 못하고 무너진 것은 결국 현장 리더십이 데이터 기반 피드백과 투수 리빌딩·운용에 완전히 실패했음을 방증합니다.</p>
+                <h3>선발 vs 불펜 평균자책점 괴리 <span class="badge">코칭스태프 역량 한계</span></h3>
+                <p>팀 평균자책점은 4.79(6위)였지만 불펜 평균자책점은 5.22(8위)까지 치솟았습니다. 선발이 버텨낸 경기를 뒷문에서 날려버리는 구조를 시즌 내내 바로잡지 못한 것은 결국 현장 리더십이 데이터 기반 피드백과 투수 리빌딩·운용에 완전히 실패했음을 방증합니다.</p>
             </div>
 
             <div class="card">
@@ -267,7 +347,7 @@
 </script>
 
         <footer>
-            <p>NC 다이노스를 진정으로 사랑하는 다이노스 팬 연대 공동 작성 (기준: 2026.10.01)</p>
+            <p>NC 다이노스를 진정으로 사랑하는 다이노스 팬 연대 공동 작성 (기준: 2026.10.12 정규시즌 종료)</p>
         </footer>
     </div>
 
